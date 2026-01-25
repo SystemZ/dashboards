@@ -348,7 +348,7 @@
           "measurement": "clients",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "select count(distinct(hostname)) FROM \"clients\" WHERE $timeFilter AND ap_name =~ /^${AP:regex}$/ AND site_name =~ /^${Site:regex}$/ GROUP BY \"oui\"",
+          "query": "select count(distinct(hostname)) FROM \"clients\" WHERE $timeFilter AND ap_name =~ /^${AP:regex}$/ AND site_name =~ /^${Site:regex}$/ AND \"oui\" != '' GROUP BY \"oui\"",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
